@@ -37,13 +37,18 @@ NvGpuTempApplet.prototype = {
         GLib.spawn_command_line_async('nvidia-settings');
     },
 
+    on_applet_removed_from_panel: function() {
+        Mainloop.source_remove(this.loopId);
+        this.loopId = 0;
+    },
+
     updateTemperature: function() {
         let [result, stdout, stderr] = GLib.spawn_command_line_sync('nvidia-smi --query-gpu=temperature.gpu --format=csv,noheader,nounits');
-        this.set_applet_label(stdout.toString().trim() + " °");
+        this.set_applet_label(stdout.toString().trim() + " °"); 
+        return true;
     }
 };
 
 function main(metadata, orientation, instance_id) {
     return new NvGpuTempApplet(metadata, orientation, instance_id);
 };
-
