@@ -1,0 +1,6 @@
+{
+    "uuid": "nvidiatemp@sophielali",
+    "name": "NVidia GPU Temperature Indicator",
+    "description": "Shows NVidia GPU Temperature",
+    "author": "Sophie La Li"
+}
