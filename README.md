@@ -1,2 +1,5 @@
-# NVidia GPU Temperature - Cinnamon Applet
-A quick and dirty Linux Mint Cinnamon applet to display GPU temperature for NVidia cards.
+# NVidia GPU Temperature Indicator
+
+A simple Applet that uses nvidia-smi to display the GPU temperature. The update interval can be adapted in the settings.
+
+Borrowed some code from temperature@fevimu.
